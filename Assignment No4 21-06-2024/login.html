@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <div class="name" style="top: 25%;">
+        <label style="font-size: 35px;"><b>Login</b></label><br>
+        <form>
+        Username:
+        <input type="text" id="t1" placeholder="enter username" name="t1"><span style="color: red;">*</span><br>
+        Password:
+        <input type="password" placeholder="enter password" id="password" name="password"><span style="color: red;">*</span><br>
+        <input type="checkbox" id="ch1" class="ch1" onclick="checkShow()"><span id="span">Show Password</span><br>
+        <input type="button" value="Login" class="bnt" onclick="checkLogin()">
+        <input type="button" value="Sign-up" class="bnt" onclick="checkSign()"><br>
+        <script>
+            function checkLogin(){
+                var u = document.getElementById("password");
+                var v = document.getElementById("t1");
+                
+                if(u.value == ''){
+                    alert('Enter password');
+                    u.style.borderColor = 'red'
+                    u.style.backgroundColor = 'green'
+                }
+                
+                
+                if(v.value == ''){
+                    alert('Enter username');
+                    v.style.borderColor = 'red'
+                    v.style.backgroundColor = 'green'
+
+                }
+                else if(u.value != 'password'){
+                        u.style.backgroundColor = 'white'
+                    }
+                else{
+                    alert("Welcome to HomePage")
+                }
+            }
+            function checkSign(){
+
+                window.location.replace("C:/HTML/Registration.html");
+            }
+            function checkShow(){
+                var u = document.getElementById("password");
+                var s = document.getElementById("span")
+                if(u.type == "password"){
+                    u.type = "text";
+                    s.textContent = 'hide password'
+                }
+                else{
+                    u.type = "password" ;
+                    s.textContent = 'show password'
+
+                }
+            }
+        </script>
+</body>
+</html>

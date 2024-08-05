@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> Registration </title>
+<link rel="stylesheet" href="reg.css">
+</head>
+<body>
+	<div class="name">
+	<label style="font-size: 35px;"><b>Registration</b></label><br>
+	<form>
+	 Username:
+	<input type="text" id="t1" placeholder="your name" class="t1"><br>
+       Contact no:
+	<input type="tel" maxlength="10" placeholder="your no" id="t2" class="t2"><br>
+ 	Enter DOB:
+	<input type="date" id="t3" class="t3"><br>
+	Select Gender:
+	<input type="radio" name="c2" values="male" id="c2">male
+	<input type="radio" name="c2" values="female" id="c2">female
+	<br>
+    Password:
+    <input type="password" id="p1" class="p1"><span style="color: red;">*</span><br>
+	<input type="checkbox" id="ch1" class="ch1" onclick="checkShow()"><span id="span">Show Password</span><br>
+
+    Confirm Password
+    <input type="password" id="p2" class="p2"><span style="color: red;">*</span><br>
+	<input type="checkbox" id="ch1" class="ch1" onclick="checkShow1()"><span id="span1">Show Password</span><br>
+
+	<input type="button" value="Register" class="bnt" onclick="checkSign()">
+	<input type="button" value="Login" class="bnt" onclick="checkLogin()">
+</form>
+</div>
+<script>
+	function checkSign(){
+		var t = document.getElementById("t1");
+		var n = document.getElementById("t2");
+		var s = document.getElementById("t3");
+		var z = document.getElementById("c2");
+		var a = document.getElementById("p1");
+		var q = document.getElementById("p2");
+
+                if(t.value == ''|| n.value == '' || s.value == '' || z.value == ''|| a.value == ''|| q.value == '' ){
+                    alert('filled the entier field');
+                }
+				
+	}
+	function checkLogin(){
+		window.location.replace("C:/HTML/login.html");
+	}
+	function checkShow(){
+		var a = document.getElementById("p1");
+		var s = document.getElementById("span")
+		
+
+		if(a.type == "password"){
+                    a.type = "text";
+                    s.textContent = 'hide password'
+                }
+                else{
+                    a.type = "password" ;
+                    s.textContent = 'show password'
+
+                }
+			}		
+		function checkShow1(){
+			var q = document.getElementById("p2");
+			var s1 = document.getElementById("span1")
+			if(q.type == "password"){
+                    q.type = "text";
+                    s1.textContent = 'hide password'
+                }
+                else{
+                    q.type = "password" ;
+                    s1.textContent = 'show password'
+
+                }
+		}
+</script>
+</body>
+</html>
